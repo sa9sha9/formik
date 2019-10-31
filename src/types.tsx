@@ -113,6 +113,12 @@ export interface FormikHelpers<Values> {
     cb?: () => void
   ): void;
 }
+// NOTE(saku): 配列型のform nameが作成できなくなるため、型override
+export interface FormikHelpers<Values> {
+  setFieldValue(field: string, value: any): void;
+  setFieldError(field: string, message: string): void;
+  setFieldTouched(field: string, isTouched?: boolean): void;
+}
 
 /**
  * Formik form event handlers
